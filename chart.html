@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="asset/js/Chart.PieLabel.js"></script>
+    <title>Chart</title>
+    <style>
+        .content {
+            padding: 15px;
+        }
+        .btn-chart {
+            background-color: rgb(88, 175, 183);
+            color: white;
+        }
+
+        .base-color {
+            color: rgb(88, 175, 183);
+        }
+
+        .dezrQT {
+            display: flex;
+            overflow-x: hidden;
+            flex-wrap: nowrap;
+        }
+
+        .bRQwNE {
+            width: 100%;
+            min-width: 100%;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(238, 240, 240);
+            border-image: initial;
+            border-radius: 4px;
+            overflow: hidden;
+            background: rgb(255, 255, 255);
+        }
+
+        .eecgtK {
+            min-height: 40px;
+            max-height: 48px;
+            border-bottom: 1px solid rgb(238, 240, 240);
+        }
+
+        .gQmwCT {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(249, 249, 249);
+            padding: 0px 8px;
+        }
+
+        .hHssmt {
+            min-width: 1%;
+            max-width: 960px;
+            min-height: 40px;
+            max-height: 48px;
+            display: flex;
+            position: relative;
+            font-size: 12px;
+            color: rgb(107, 107, 107);
+            width: 50%;
+            text-align: left;
+            flex: 1 0 auto;
+            padding: 0px 8px;
+            border-width: initial !important;
+            border-style: none !important;
+            border-color: initial !important;
+            border-image: initial !important;
+        }
+
+        .cyzSyf {
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .gnoXQR {
+            cursor: pointer;
+            max-width: 100%;
+            background-color: transparent;
+            font-weight: 400;
+            text-transform: capitalize;
+            display: inline-flex;
+            -webkit-box-align: center;
+            align-items: center;
+            color: inherit;
+            box-shadow: none !important;
+            font-size: 12px !important;
+            outline: none;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            border-image: initial;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .epOHCI {
+            min-width: 1%;
+            max-width: 480px;
+            min-height: 40px;
+            max-height: 48px;
+            display: flex;
+            position: relative;
+            font-size: 12px;
+            color: rgb(107, 107, 107);
+            width: 25%;
+            text-align: left;
+            flex: 1 0 auto;
+            padding: 0px 8px;
+            border-width: initial !important;
+            border-style: none !important;
+            border-color: initial !important;
+            border-image: initial !important;
+        }
+
+        .bKhyDW {
+            min-width: 1%;
+            max-width: 400px;
+            min-height: 40px;
+            max-height: 48px;
+            display: flex;
+            position: relative;
+            font-size: 12px;
+            color: rgb(107, 107, 107);
+            width: 25%;
+            text-align: left;
+            flex: 1 0 auto;
+            padding-left: 8px;
+            border-width: initial !important;
+            border-style: none !important;
+            border-color: initial !important;
+            border-image: initial !important;
+        }
+
+        .fpjZSC {
+            width: 100%;
+        }
+
+        .kZaLSf {
+            display: flex;
+            box-sizing: border-box;
+            width: 100%;
+            cursor: pointer;
+            border-bottom: 1px solid rgb(238, 240, 240);
+            padding: 0px 8px;
+        }
+
+        .ijIZyD {
+            min-width: 1%;
+            max-width: 960px;
+            min-height: 32px;
+            max-height: 48px;
+            display: flex;
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            align-items: center;
+            font-size: 12px;
+            color: rgb(107, 107, 107);
+            width: 50%;
+            text-align: left;
+            cursor: pointer;
+            flex: 1 0 auto;
+            padding: 0px 8px;
+        }
+
+        .IwGWJ {
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .ezECkK {
+            min-width: 1%;
+            max-width: 480px;
+            min-height: 32px;
+            max-height: 48px;
+            display: flex;
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            align-items: center;
+            font-size: 12px;
+            color: rgb(107, 107, 107);
+            width: 25%;
+            text-align: left;
+            cursor: pointer;
+            flex: 1 0 auto;
+            padding: 0px 8px;
+        }
+
+        .jtotOQ {
+            min-width: 1%;
+            max-width: 480px;
+            min-height: 32px;
+            max-height: 48px;
+            display: flex;
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            align-items: center;
+            font-size: 12px;
+            color: rgb(107, 107, 107);
+            width: 25%;
+            text-align: left;
+            cursor: pointer;
+            flex: 1 0 auto;
+            padding: 0px 8px;
+        }
+
+        #enable-chart {
+            width: 100px;
+            height: 30px;
+            border-radius: 12px;
+            border: none;
+            outline: none;
+        }
+
+        .charts {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .charts:nth-child(odd) {
+            margin-right: 40px;
+        }
+
+        .charts-item {
+            width: 48%;
+            flex: 0 48%;
+            margin: 40px 0px;
+            height: 600px;
+        }
+
+        .chart-label {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .chartjs-hidden-iframe {
+            display: block;
+            overflow: hidden;
+            border: 0px;
+            margin: 0px;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        #doughnut-canvas {
+            display: block;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="row">
+            <div class="col">PERIOD <span class="base-color">01/01/2020 - 31/01/2020</span></div>
+            <div class="col">DESK <span class="base-color">all(general, sport, economy, politics)</span></div>
+            <div class="col">CATEGORY <span class="base-color">all</div>
+            <div class="col">PUBLISHER <span class="base-color">dpg media</span></div>
+        </div>
+        <div class="sc-qXETE dezrQT">
+            <div role="table" class="sc-pAbQW sc-pstiC bRQwNE">
+                <div role="rowgroup" class="sc-qXRsP eecgtK">
+                    <div role="row" class="sc-pApQZ gQmwCT">
+                        <span width="20" scope="col" class="sc-pkWUx sc-psTHQ sc-pYdiy hHssmt" role="columnheader">
+                            <button class="sc-pImJo gnoXQR head-cell-button" tabindex="-1">
+                                <span class="sc-pQgqj cyzSyf text-overflow">Newsbrand</span>
+                                <span size="16" color="#898989" spacing="5" class="sc-AxhUy cjysmu" cursor="inherit">
+                                    <svg data-name="Layer 1" viewBox="0 0 24 24">
+                                        <path
+                                            d="M8.35 10.35a.49.49 0 0 1-.7-.7l4-4a.48.48 0 0 1 .7 0l4 4a.49.49 0 0 1-.7.7L12 6.71zm7.3 3.3a.49.49 0 0 1 .7.7l-4 4a.48.48 0 0 1-.7 0l-4-4a.49.49 0 0 1 .7-.7L12 17.29z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </span>
+                        <span width="12" scope="col" class="sc-pkWUx sc-psTHQ sc-pYdiy epOHCI" role="columnheader">
+                            <button class="sc-pImJo gnoXQR head-cell-button" tabindex="-1">
+                                <span class="sc-pQgqj cyzSyf text-overflow">Print</span>
+                                <span size="16" color="#898989" spacing="5" class="sc-AxhUy cjysmu" cursor="inherit">
+                                    <svg data-name="Layer 1" viewBox="0 0 24 24">
+                                        <path
+                                            d="M8.35 10.35a.49.49 0 0 1-.7-.7l4-4a.48.48 0 0 1 .7 0l4 4a.49.49 0 0 1-.7.7L12 6.71zm7.3 3.3a.49.49 0 0 1 .7.7l-4 4a.48.48 0 0 1-.7 0l-4-4a.49.49 0 0 1 .7-.7L12 17.29z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </span>
+                        <span width="5" scope="col" class="sc-pkWUx sc-psTHQ sc-pYdiy bKhyDW" role="columnheader">
+                            <button class="sc-pImJo gnoXQR head-cell-button" tabindex="-1">
+                                <span class="sc-pQgqj cyzSyf text-overflow">Online</span>
+                                <span size="16" color="#898989" spacing="5" class="sc-AxhUy cjysmu" cursor="inherit">
+                                    <svg data-name="Layer 1" viewBox="0 0 24 24">
+                                        <path
+                                            d="M8.35 10.35a.49.49 0 0 1-.7-.7l4-4a.48.48 0 0 1 .7 0l4 4a.49.49 0 0 1-.7.7L12 6.71zm7.3 3.3a.49.49 0 0 1 .7.7l-4 4a.48.48 0 0 1-.7 0l-4-4a.49.49 0 0 1 .7-.7L12 17.29z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div role="rowgroup" class="sc-qXepu sc-pQTtE fpjZSC">
+                    <div role="row" class="sc-qPhCb sc-pljtI kZaLSf">
+                        <span width="20" role="cell" class="sc-pkWUx sc-ptGLl ijIZyD">
+                            <span class="sc-qPubm IwGWJ">De Morgen</span>
+                        </span>
+                        <span width="12" role="cell" class="sc-pkWUx sc-ptGLl ezECkK">
+                            <span class="sc-qPubm IwGWJ">3145 3% (+1%)</span>
+                        </span>
+                        <span width="5" role="cell" class="sc-pkWUx sc-ptGLl jtotOQ">
+                            <span class="sc-qPubm IwGWJ">12451 12% (+3%)</span>
+                        </span>
+                    </div>
+                    <div role="row" class="sc-qPhCb sc-pljtI kZaLSf">
+                        <span width="20" role="cell" class="sc-pkWUx sc-ptGLl ijIZyD">
+                            <span class="sc-qPubm IwGWJ">Het Laatste</span>
+                        </span>
+                        <span width="12" role="cell" class="sc-pkWUx sc-ptGLl ezECkK">
+                            <span class="sc-qPubm IwGWJ">5735 5%(-)</span>
+                        </span>
+                        <span width="5" role="cell" class="sc-pkWUx sc-ptGLl jtotOQ">
+                            <span class="sc-qPubm IwGWJ">2345 25% (-1%)</span>
+                        </span>
+                    </div>
+                    <div role="row" class="sc-qPhCb sc-pljtI kZaLSf">
+                        <span width="20" role="cell" class="sc-pkWUx sc-ptGLl ijIZyD">
+                            <span class="sc-qPubm IwGWJ">LaDernère Heure</span>
+                        </span>
+                        <span width="12" role="cell" class="sc-pkWUx sc-ptGLl ezECkK">
+                            <span class="sc-qPubm IwGWJ">5735 5% (-)</span>
+                        </span>
+                        <span width="5" role="cell" class="sc-pkWUx sc-ptGLl jtotOQ">
+                            <span class="sc-qPubm IwGWJ">2345 25% (-1%)</span>
+                        </span>
+                    </div>
+                    <div role="row" class="sc-qPhCb sc-pljtI kZaLSf">
+                        <span width="20" role="cell" class="sc-pkWUx sc-ptGLl ijIZyD">
+                            <span class="sc-qPubm IwGWJ">LeSoir</span>
+                        </span>
+                        <span width="12" role="cell" class="sc-pkWUx sc-ptGLl ezECkK">
+                            <span class="sc-qPubm IwGWJ">5735 5% (-)</span>
+                        </span>
+                        <span width="5" role="cell" class="sc-pkWUx sc-ptGLl jtotOQ">
+                            <span class="sc-qPubm IwGWJ">23345 25% (-1%)</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5">
+            <input type="button" id="enable-chart" class="btn-chart" onclick="showHideChart();" value="Hide charts">
+        </div>
+        <div class="charts" id="charts">
+            <div class="charts-item">
+                <div class="chart-label">usage type(s)</div>
+                <div class="chart-wrapper"><iframe class="chartjs-hidden-iframe" tabindex="-1"></iframe>
+                    <canvas id="doughnut-canvas"></canvas>
+                </div>
+            </div>
+            <div class="charts-item">
+                <div class="chart-label">evolution % print/online period A vs period B</div>
+                <canvas id="evolution-chart" width="200" height="200"></canvas>
+            </div>
+            <div class="charts-item">
+                <div class="chart-label">absolute evolution online/print</div>
+                <canvas id="abs-evolution-chart" width="200" height="200"></canvas>
+            </div>
+            <div class="charts-item">
+                <div class="chart-label">% print/online: 2020 vs 2019</div>
+                <canvas id="groupped-newsbrand-chart" width="200" height="200"></canvas>
+            </div>
+            <div class="charts-item">
+                <div class="chart-label">evolution % usage print & online</div>
+                <canvas id="percent-evolution-chart" width="200" height="200">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    function showHideChart() {
+        let btnShowChartsValue = document.getElementById("enable-chart").value;
+        if (btnShowChartsValue == "Hide charts") {
+            document.getElementById("enable-chart").value = "Show charts";
+            document.getElementById("charts").style.display = 'none';
+        } else if (btnShowChartsValue == "Show charts") {
+            document.getElementById("enable-chart").value = "Hide charts";
+            document.getElementById("charts").style.display = 'flex';
+
+        }
+    }
+
+    function createUsageTypeChart(id, type, options) {
+        var data = {
+            labels: ['January', 'February', 'March', 'April'],
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    data: [50445, 33655, 15900, 9000],
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#46BFBD'
+                    ]
+                }
+            ]
+        };
+        var ctx = document.getElementById(id);
+        ctx.height = 600;
+        new Chart(ctx, {
+            type: type,
+            data: data,
+            options: options
+        });
+    }
+
+    function generateUsageTypeChart() {
+        createUsageTypeChart('doughnut-canvas', 'doughnut', {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: true,
+                position: 'labeled'
+            },
+            pieceLabel: {
+                render: function (args) {
+                    return `${args.label}: ${args.value} (${args.percentage}%)`;
+                },
+                fontColor: '#000',
+                position: 'outside',
+                segment: true,
+                overlap: false,
+                showActualPercentages: true,
+                segmentColor: 'auto'
+            }
+        });
+
+    }
+
+    function generateAbsoluteEvolutionChart() {
+        // Return with commas in between
+        var numberWithCommas = function (x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        };
+
+        var dataPack1 = [19, 22, 21, 20, 20, 18];
+        var dataPack2 = [44, 39, 39, 45, 42, 40];
+        var dates = ["5/3/2020", "5/4/2020", "5/5/2020", "5/6/2020", "5/7/2020", "5/8/2020"];
+
+        var bar_ctx = document.getElementById('abs-evolution-chart');
+        bar_ctx.height = 600;
+        var bar_chart = new Chart(bar_ctx, {
+            type: 'bar',
+            data: {
+                labels: dates,
+                datasets: [
+                    {
+                        label: 'Print',
+                        data: dataPack1,
+                        backgroundColor: "#0000FF",
+                        hoverBackgroundColor: "#3393FF",
+                        barPercentage: 0.5,
+                        barThickness: 3,
+                        maxBarThickness: 8,
+                        minBarLength: 2,
+                        hoverBorderWidth: 0
+                    },
+                    {
+                        label: 'Online',
+                        data: dataPack2,
+                        backgroundColor: "#FF0000",
+                        hoverBackgroundColor: "#FF4500",
+                        barPercentage: 0.5,
+                        barThickness: 6,
+                        maxBarThickness: 8,
+                        minBarLength: 2,
+                        hoverBorderWidth: 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 10,
+                },
+                tooltips: {
+                    mode: 'label',
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.datasets[tooltipItem.datasetIndex].label + ": " + numberWithCommas(tooltipItem.yLabel);
+                        }
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        stacked: true,
+                        gridLines: { display: false },
+                    }],
+                    yAxes: [{
+                        stacked: true,
+                        ticks: {
+                            callback: function (value) { return numberWithCommas(value); },
+                        },
+                    }],
+                },
+                legend: { display: true }
+            },
+            plugins: [{
+                beforeInit: function (chart) {
+                    chart.data.labels.forEach(function (value, index, array) {
+                        var a = [];
+                        a.push(value.slice(0, 6));
+                        var i = 1;
+                        while (value.length > (i * 6)) {
+                            a.push(value.slice(i * 6, (i + 1) * 6));
+                            i++;
+                        }
+                        array[index] = a;
+                    })
+                }
+            }]
+        }
+        );
+    }
+
+    function generatePeriodEvolutionChart() {
+        var ctx = document.getElementById("evolution-chart").getContext("2d");
+        ctx.height = 600;
+        var data = {
+            labels: ["5/3/2020", "5/5/2020", "5/6/2020", "5/7/2020", "5/8/2020", "5/9/2020"],
+            datasets: [{
+                label: "Print",
+                backgroundColor: "#007DFF",
+                data: [3, 4, 4, 4, 2.5, 4.5]
+            }, {
+                label: "Online",
+                backgroundColor: "#FF0000",
+                data: [10.2, 8.5, 8.7, 10.4, 9.1, 9.1]
+            }, {
+                label: "Abc",
+                backgroundColor: "#FFCE56",
+
+                data: [4.7, 4, 5, 4.8, 4.3, 4.8]
+            }, {
+                label: "Xyz",
+                backgroundColor: "#008000",
+
+                data: [12.8, 11.5, 9, 10.8, 9.2]
+            }]
+        };
+
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                barValueSpacing: 0,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: this.max,
+                            callback: function (value) {
+                                return value + "%"
+                            }
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: { display: false },
+                        barPercentage: 1
+                    }]
+                }
+            }
+        });
+
+    }
+
+    function generateGrouppedByNewsBrandBarchart() {
+        var ctx = document.getElementById("groupped-newsbrand-chart").getContext("2d");
+        ctx.height = 600;
+        var data = {
+            labels: ["De Morgen", "het Laatste Nieuws", "Het Nieuwsblad", "La Denière", "Le Soir"],
+            datasets: [{
+                label: "Print",
+                backgroundColor: "#007DFF",
+                data: [7, 9.7, 6.5, 8.8, 7.6]
+            }, {
+                label: "Online",
+                backgroundColor: "#FF0000",
+                data: [9, 9.6, 5.9, 8.9, 7.6]
+            }, {
+                label: "Abc",
+                backgroundColor: "#FFCE56",
+                data: [17.5, 16, 14, 19.8, 15.2]
+            }, {
+                label: "Xyz",
+                backgroundColor: "#008000",
+                data: [19, 16.5, 19.5, 17, 14.6, 18.3, 15.8]
+            }]
+        };
+
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                barValueSpacing: 0,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: this.max,
+                            callback: function (value) {
+                                return value + "%"
+                            }
+                        }
+                    }],
+                    xAxes: [{
+                        barPercentage: 1
+                    }]
+                }
+            }
+        });
+
+    }
+
+    function generatePercentUsageBarchart() {
+        var ctx = document.getElementById("percent-evolution-chart").getContext("2d");
+        ctx.height = 600;
+        var data = {
+            labels: ["5/3/2020", "5/4/2020", "5/5/2020", "5/6/2020", "5/7/2020", "5/8/2020"],
+            datasets: [{
+                label: "Print",
+                backgroundColor: "#0000FF",
+                data: [4.7, 4.9, 4.9, 4.9, 4.3, 4.3]
+            }, {
+                label: "Online",
+                backgroundColor: "#FF0000",
+                data: [10.1, 9.2, 9.2, 10.2, 9.3, 9.3]
+            }]
+        };
+
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                barValueSpacing: 0,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: this.max,
+                            callback: function (value) {
+                                return value + "%"
+                            }
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: { display: false },
+                        barPercentage: 1
+                    }]
+                }
+            }
+        });
+
+    }
+
+    window.onload = function () {
+        generateUsageTypeChart();
+        generateAbsoluteEvolutionChart();
+        generatePeriodEvolutionChart();
+        generateGrouppedByNewsBrandBarchart();
+        generatePercentUsageBarchart();
+    };
+
+</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js"></script>
+<script>
+    SyntaxHighlighter.all();
+</script>
+</body>
+
+</html>
