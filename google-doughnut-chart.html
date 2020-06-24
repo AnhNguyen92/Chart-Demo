@@ -5,6 +5,8 @@
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
+	  var data = new google.visualization.DataTable();
+		
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['Work',     11],
@@ -19,11 +21,31 @@
         var options = {
           title: 'Usage type(s)',
 		  legend: { position: 'labeled' },
+		  animation: {
+          duration: 1500,
+          
+          startup: true
+        },
           pieHole: 0.4,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
+		 var percent = 0;
+        // start the animation loop
+        var handler = setInterval(function(){
+            // values increment
+            percent += 1;
+            // apply new values
+            data.setValue(0, 1, percent);
+            data.setValue(1, 1, 100 - percent);
+            // update the pie
+            chart.draw(data, options);
+            // check if we have reached the desired value
+            if (percent > 74)
+                // stop the loop
+                clearInterval(handler);
+        }, 30);
       }
     </script>
   </head>
